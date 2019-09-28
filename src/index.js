@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// index.css : 전역 css 용도
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
