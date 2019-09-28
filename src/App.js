@@ -43,12 +43,22 @@ class App extends React.Component{
 		console.log('handleChangeScore: ', id, delta);
 
 		this.setState(prevState => {
+/*
 			const player = prevState.players.find(player => player.id === id);
 			player.score += delta;
 			return {
 				// 안의 내용까지 보지않고 객체 주소만 보고 바꼈는지 안바꼈는지 판별(불변)
 				// player: prevState -> 주소는 이전과 동일하기 때문에 변화가 일어났는지 모르게 됨
 				players: [...prevState.players] // 새로운 객체에 담아서 변화를 알려준다
+			}
+*/
+			return {player: prevState.players.map(player => {
+					if (player.id === id) {
+						player.score += delta;
+					}
+
+					return player;
+				})
 			}
 		})
 	}
