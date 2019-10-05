@@ -7,14 +7,14 @@ import {Counter} from './Counter';
 // 근데 객체를 넘기면 소용이 없다 걔는 레퍼런스타입이니까
 export class Player extends React.Component {
 	render() {
-		console.log(this.props.name, ' rendered');
+		const {removePlayer, id, name, score, changeScore} = this.props;
 		return (
 			<div className="player">
 				<span className="player-name">
-					<button className="remove-player" onClick={() => this.props.removePlayer(this.props.id) }> X </button>
-					{this.props.name}
+					<button className="remove-player" onClick={() => removePlayer(id) }> X </button>
+					{name}
 				</span>
-				<Counter score={this.props.score} changeScore={this.props.changeScore} id={this.props.id}/>
+				<Counter score={score} changeScore={changeScore} id={id}/>
 				</div>
 		)
 	}
