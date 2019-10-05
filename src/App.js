@@ -5,6 +5,7 @@ import {Player} from "./Player";
 import {AddPlayerForm} from "./AddPlayerForm";
 
 class App extends React.Component{
+	maxId = 4;
 	state = {
 		players: [
 			{name: 'rina1', score: 30, id: 1},
@@ -66,8 +67,14 @@ class App extends React.Component{
 		})
 	}
 
-	handleAddPlayer(name) {
+	handleAddPlayer = (name) => {
 		console.log('handleAddPlayer: ', name);
+
+		this.setState(prevState => {
+			const players = [...prevState.players];
+			players.push({name, id: ++this.maxId, score: 0});
+			return { players }
+		});
 	}
 }
 
