@@ -1,3 +1,5 @@
+import {ADD_PLAYER, REMOVE_PLAYER} from "../actionTypes";
+
 const playerInitialState = {
 	players: [
 		{name: 'rina1', score: 30, id: 1},
@@ -10,16 +12,19 @@ const playerInitialState = {
 let maxId = 4;
 
 export const playerReducer = (state = playerInitialState, action) => {
-	switch (action.type) {
-		case 'ADD_PLAYER':
-			console.log('addPlayer');
-			const players = [...state.players];
-			players.push({name: action.name, id: ++maxId, score: 0});
-			return { players: players }
+	let players;
 
-		case 'REMOVE_PLAYER':
+	switch (action.type) {
+		case ADD_PLAYER:
+			console.log('addPlayer');
+			players = [...state.players];
+			players.push({name: action.name, id: ++maxId, score: 0});
+			return { players }
+
+		case REMOVE_PLAYER:
 			console.log('removePlayer');
-			break;
+			players = state.players.filter(player => player.id !== action.id);
+			return { players }
 	}
 
 	return state;
