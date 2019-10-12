@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import {Header} from "./Header";
-import Player from "./Player";
+import Header from "./Header";
 import AddPlayerForm from "./AddPlayerForm";
 import {connect} from "react-redux";
+import {CustomPlayer} from "./CustomPlayer";
 
 class App extends React.Component{
 	render() {
@@ -14,7 +14,7 @@ class App extends React.Component{
 				{
 					this.props.players.map(player => {
 						return (
-							<Player name={player.name} score={player.score} id={player.id} key={player.id} />
+							<CustomPlayer name={player.name} score={player.score} id={player.id} key={player.id} />
 						)
 					})
 				}

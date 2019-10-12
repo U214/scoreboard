@@ -2,8 +2,9 @@ import React from 'react';
 import Stats from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 import Proptypes from 'prop-types';
+import {connect} from "react-redux";
 
-export const Header = ({title}) => {
+const Header = ({title}) => {
 	return (
 		<header className="header">
 			<Stats/>
@@ -26,3 +27,12 @@ Header.propTypes = {
 Header.defaultProps = {
 	title: 'Scoreboard'
 }
+
+// 부모가 자식한테
+// store의 state를 props 매핑
+const mapStateToProps = (state) => ({
+	// 왼쪽은 props, 오른쪽은 store state
+	title: state.playerReducer.title,
+})
+
+export default connect(mapStateToProps)(Header);

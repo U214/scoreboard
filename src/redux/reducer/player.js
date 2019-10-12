@@ -6,7 +6,8 @@ const playerInitialState = {
 		{name: 'rina2', score: 40, id: 2},
 		{name: 'rina3', score: 50, id: 3},
 		{name: 'rina4', score: 60, id: 4},
-	]
+	],
+	title: 'Redux Scoreboard'
 }
 
 let maxId = 4;
