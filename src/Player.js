@@ -24,7 +24,7 @@ class Player extends React.Component {
 					<button className="remove-player" onClick={() => removePlayer(id) }> X </button>
 					{name}
 				</span>
-				<Counter score={score} changeScore={changeScore} id={id}/>
+				<Counter score={score} id={id}/>
 				</div>
 		)
 	}
