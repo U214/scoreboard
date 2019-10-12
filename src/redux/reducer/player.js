@@ -16,6 +16,10 @@ export const playerReducer = (state = playerInitialState, action) => {
 			const players = [...state.players];
 			players.push({name: action.name, id: ++maxId, score: 0});
 			return { players: players }
+
+		case 'REMOVE_PLAYER':
+			console.log('removePlayer');
+			break;
 	}
 
 	return state;

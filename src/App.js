@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Header} from "./Header";
-import {Player} from "./Player";
+import Player from "./Player";
 import AddPlayerForm from "./AddPlayerForm";
 import {connect} from "react-redux";
 

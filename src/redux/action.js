@@ -4,3 +4,8 @@ export const addPlayer = (name) => ({
 	name
 })
 
+export const removePlayer = (id) => ({
+	type: 'REMOVE_PLAYER',
+	id
+})
+
