@@ -3,10 +3,10 @@ import {Stats} from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 import Proptypes from 'prop-types';
 
-export const Header = ({players, title}) => {
+export const Header = ({title}) => {
 	return (
 		<header className="header">
-			<Stats players={players}/>
+			<Stats/>
 			<h1 className="h1">{title}</h1>
 			<Stopwatch></Stopwatch>
 		</header>

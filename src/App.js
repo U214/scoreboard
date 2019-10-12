@@ -9,7 +9,7 @@ class App extends React.Component{
 	render() {
 		return (
 			<div className="scoreboard">
-				<Header title="My Scoreboard" players={this.props.players}/>
+				<Header />
 
 				{
 					this.props.players.map(player => {

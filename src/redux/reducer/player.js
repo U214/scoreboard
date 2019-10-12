@@ -31,7 +31,7 @@ export const playerReducer = (state = playerInitialState, action) => {
 			players = [ ...state.players ];
 			const player = players.find(player => player.id === action.id);
 			player.score += action.delta;
-			return {players}
+					return {players}
 	}
 
 	return state;
