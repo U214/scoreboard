@@ -1,5 +1,6 @@
 // action creator
-export const updateUser = (name) => ({
-	type: 'updateUser',
+export const addPlayer = (name) => ({
+	type: 'ADD_PLAYER',
 	payload: name
 })
+

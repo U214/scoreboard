@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from "./Header";
 import {Player} from "./Player";
-import {AddPlayerForm} from "./AddPlayerForm";
+import AddPlayerForm from "./AddPlayerForm";
 import {connect} from "react-redux";
 
 class App extends React.Component{
@@ -21,7 +21,7 @@ class App extends React.Component{
 					})
 				}
 
-				<AddPlayerForm addPlayer={this.handleAddPlayer} />
+				<AddPlayerForm />
 	</div>
 		)
 	}
@@ -58,7 +58,7 @@ class App extends React.Component{
 		})
 	}
 
-	handleAddPlayer = (name) => {
+	/*handleAddPlayer = (name) => {
 		console.log('handleAddPlayer: ', name);
 
 		this.setState(prevState => {
@@ -66,9 +66,10 @@ class App extends React.Component{
 			players.push({name, id: ++this.maxId, score: 0});
 			return { players }
 		});
-	}
+	}*/
 }
 
+// 액션을 디스패치하는 펑션을 props 매핑
 const mapStateToProps = (state) => ({
 	// 왼쪽은 props, 오른쪽은 store state
 	players: state.playerReducer.players,
