@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {changeScore, removePlayer} from "./redux/action";
+import {connect} from "react-redux";
 
-export class Counter extends React.Component {
+class Counter extends React.Component {
 	increment = (delta) => {
 		this.props.changeScore(this.props.id, delta);
 	}
@@ -24,3 +26,11 @@ Counter.propTypes = {
 	id: PropTypes.number,
 	score: PropTypes.number,
 }
+
+// 자식이 부모한테
+const mapActionToProps = (dispatch) => ({
+	// 왼쪽은 props, 오른쪽은 (액션을 디스패치하는) 함수
+	changeScore: (id, delta) => dispatch(changeScore(id, delta))
+})
+
+export default connect(null, mapActionToProps)(Counter);

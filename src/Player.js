@@ -1,5 +1,5 @@
 import React from 'react';
-import {Counter} from './Counter';
+import Counter from './Counter';
 import PropTypes from 'prop-types';
 import {removePlayer} from "./redux/action";
 import {connect} from "react-redux";
