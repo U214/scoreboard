@@ -15,7 +15,6 @@ class App extends React.Component{
 					this.props.players.map(player => {
 						return (
 							<Player name={player.name} score={player.score} id={player.id} key={player.id}
-											removePlayer={this.handleRemovePlayer}
 											changeScore={this.handleChangeScore} />
 						)
 					})
@@ -26,13 +25,13 @@ class App extends React.Component{
 		)
 	}
 
-	handleRemovePlayer = (id) => {
+	/*handleRemovePlayer = (id) => {
 		console.log('handlRemovePlayer: ' + id);
 
 		this.setState(prevState => ({
 			players: prevState.players.filter(player => player.id !== id)
 		}));
-	}
+	}*/
 
 	handleChangeScore = (id, delta) => {
 		console.log('handleChangeScore: ', id, delta);
@@ -58,15 +57,6 @@ class App extends React.Component{
 		})
 	}
 
-	/*handleAddPlayer = (name) => {
-		console.log('handleAddPlayer: ', name);
-
-		this.setState(prevState => {
-			const players = [...prevState.players];
-			players.push({name, id: ++this.maxId, score: 0});
-			return { players }
-		});
-	}*/
 }
 
 // 액션을 디스패치하는 펑션을 props 매핑
